@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "614565444695",
+    "firebase_url": "https://excel2firebase-7a334.firebaseio.com",
+    "project_id": "excel2firebase-7a334",
+    "storage_bucket": "excel2firebase-7a334.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614565444695:android:2660ac26b2997de2",
+        "android_client_info": {
+          "package_name": "id.doran.excel2firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614565444695-0sjj7128jls3l94avurcdo2lnj15o15q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAw5UGuLr3vduXAHyDANn1q5GgjWVGg3A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
