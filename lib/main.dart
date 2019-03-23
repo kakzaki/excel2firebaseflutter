@@ -29,13 +29,30 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 String text="";
-String id;
 final db = Firestore.instance;
+final WriteBatch batch = Firestore.instance.batch();
 
 void createData(List excel) async {
-    DocumentReference ref = await db.collection('EXCEL').add({'id':'${excel[0]}', 'nama':'${excel[1]}', 'kota':'${excel[2]}'});
-    setState(() => id = ref.documentID);
-    print(ref.documentID);
+//  final CollectionReference dbEXCEL = Firestore.instance.collection('EXCEL');
+//
+//  QuerySnapshot _query = await dbEXCEL
+//      .where('id', isEqualTo: '${excel[1]}')
+//      .getDocuments();
+//
+//  if (_query.documents.length > 0) {
+//    print('id sudah ada');
+//  }else{
+//    DocumentReference ref = await db.collection('EXCEL').add({'id':'${excel[0]}', 'nama':'${excel[1]}', 'kota':'${excel[2]}'});
+//    print(ref.documentID);
+//  }
+
+////    Transaksi tunggal
+//    DocumentReference ref = await db.collection('EXCEL').add({'id':'${excel[0]}', 'nama':'${excel[1]}', 'kota':'${excel[2]}'});
+//    print(ref.documentID);
+
+// batch tulis
+  batch.setData(db.collection('EXCEL').document(), {'id':'${excel[0]}', 'nama':'${excel[1]}', 'kota':'${excel[2]}'});
+
 }
 
   void _openfile()async {
@@ -54,6 +71,7 @@ void createData(List excel) async {
         row[0]=="id"?print("")
             : createData(row);
       }
+      batch.commit();
     }
   }
 
